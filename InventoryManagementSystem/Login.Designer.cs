@@ -40,17 +40,20 @@
             this.label3 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.clearFieldLabel = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.labelName = new System.Windows.Forms.Label();
+            this.pictureBoxClose = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(40)))), ((int)(((byte)(66)))));
+            this.panel1.BackColor = System.Drawing.Color.Firebrick;
+            this.panel1.Controls.Add(this.pictureBoxClose);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -101,12 +104,12 @@
             // 
             // loginButton
             // 
-            this.loginButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(40)))), ((int)(((byte)(66)))));
+            this.loginButton.BackColor = System.Drawing.Color.Firebrick;
             this.loginButton.FlatAppearance.BorderSize = 0;
             this.loginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginButton.Font = new System.Drawing.Font("Goudy Old Style", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginButton.ForeColor = System.Drawing.Color.White;
-            this.loginButton.Location = new System.Drawing.Point(27, 438);
+            this.loginButton.Location = new System.Drawing.Point(27, 430);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(268, 35);
             this.loginButton.TabIndex = 5;
@@ -126,7 +129,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(12, 13);
+            this.pictureBox2.Location = new System.Drawing.Point(12, 26);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(50, 36);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -138,7 +141,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Old English Text MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(63, 26);
+            this.label3.Location = new System.Drawing.Point(63, 39);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(232, 23);
@@ -159,23 +162,15 @@
             // clearFieldLabel
             // 
             this.clearFieldLabel.AutoSize = true;
-            this.clearFieldLabel.ForeColor = System.Drawing.Color.Red;
+            this.clearFieldLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.clearFieldLabel.ForeColor = System.Drawing.Color.Firebrick;
             this.clearFieldLabel.Location = new System.Drawing.Point(238, 330);
             this.clearFieldLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.clearFieldLabel.Name = "clearFieldLabel";
             this.clearFieldLabel.Size = new System.Drawing.Size(53, 15);
             this.clearFieldLabel.TabIndex = 4;
             this.clearFieldLabel.Text = "clear field";
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(270, 514);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(50, 36);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 7;
-            this.pictureBox4.TabStop = false;
+            this.clearFieldLabel.Click += new System.EventHandler(this.clearFieldLabel_Click);
             // 
             // labelName
             // 
@@ -187,14 +182,36 @@
             this.labelName.TabIndex = 4;
             this.labelName.Text = "UserName :";
             // 
+            // pictureBoxClose
+            // 
+            this.pictureBoxClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxClose.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxClose.Image")));
+            this.pictureBoxClose.Location = new System.Drawing.Point(285, 3);
+            this.pictureBoxClose.Name = "pictureBoxClose";
+            this.pictureBoxClose.Size = new System.Drawing.Size(32, 33);
+            this.pictureBoxClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxClose.TabIndex = 7;
+            this.pictureBoxClose.TabStop = false;
+            this.pictureBoxClose.Click += new System.EventHandler(this.pictureBoxClose_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(253, 507);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(67, 44);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 7;
+            this.pictureBox3.TabStop = false;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(320, 550);
-            this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.clearFieldLabel);
@@ -215,7 +232,8 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -234,8 +252,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label clearFieldLabel;
-        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label labelName;
+        private System.Windows.Forms.PictureBox pictureBoxClose;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
 

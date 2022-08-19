@@ -29,5 +29,20 @@ namespace InventoryManagementSystem
             else 
                 textPassword.UseSystemPasswordChar = false;
         }
+
+        private void clearFieldLabel_Click(object sender, EventArgs e)
+        {
+            textName.Clear();
+            textPassword.Clear();
+        }
+
+        private void pictureBoxClose_Click(object sender, EventArgs e)
+        { // To ask the admin whether he would like to exit the login window via a messageBox
+            // A yes will exit the app and a no will cancel the event
+            if (MessageBox.Show("Would you like to Exit", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
     }
 }
