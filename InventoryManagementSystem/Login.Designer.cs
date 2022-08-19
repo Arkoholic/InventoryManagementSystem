@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.panel1 = new System.Windows.Forms.Panel();
             this.textName = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.labelPassword = new System.Windows.Forms.Label();
             this.textPassword = new System.Windows.Forms.TextBox();
             this.loginButton = new System.Windows.Forms.Button();
@@ -56,7 +55,6 @@
             this.panel1.Controls.Add(this.pictureBoxClose);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel1.Name = "panel1";
@@ -70,18 +68,6 @@
             this.textName.Name = "textName";
             this.textName.Size = new System.Drawing.Size(268, 23);
             this.textName.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(127, 486);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 18);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "login first";
             // 
             // labelPassword
             // 
@@ -218,7 +204,6 @@
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.labelPassword);
             this.Controls.Add(this.textPassword);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.textName);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Goudy Old Style", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -244,7 +229,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textName;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelPassword;
         private System.Windows.Forms.TextBox textPassword;
         private System.Windows.Forms.Button loginButton;
