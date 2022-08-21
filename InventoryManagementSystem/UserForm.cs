@@ -38,5 +38,42 @@ namespace InventoryManagementSystem
             con.Close();
 
         }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            UserModuleForm userModule = new UserModuleForm();
+            userModule.buttonSave.Enabled = true;
+            userModule.buttonUpdate.Enabled = false;
+            userModule.ShowDialog();
+        }
+
+        private void dgvUser_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string colName = dgvUser.Columns[e.ColumnIndex].Name;
+            if (colName == "Edit")
+            {
+                UserModuleForm userModule = new UserModuleForm();
+                userModule.textUserName.Text = dgvUser.Rows[e.RowIndex].Cells[1].Value.ToString();
+                userModule.textFullName.Text = dgvUser.Rows[e.RowIndex].Cells[2].Value.ToString();
+                userModule.textPassword.Text = dgvUser.Rows[e.RowIndex].Cells[3].Value.ToString();
+                userModule.textContact.Text = dgvUser.Rows[e.RowIndex].Cells[4].Value.ToString();
+
+                userModule.buttonSave.Enabled = false;
+                userModule.buttonUpdate.Enabled = true;
+                userModule.ShowDialog();
+
+            }
+            else if (colName == "Delete")
+                    {
+                if(MessageBox.Show("Affirm whether you would like to delete this user...","Delete User?",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    con.Open();
+                    cm = new SqlCommand("DELETE FROM tbUser WHERE contact LIKE '"+ dgvUser.Rows[e.RowIndex].Cells[1].Value.ToString() + "'",con);
+                    cm.ExecuteNonQuery();
+                    con.Close();
+                    MessageBox.Show("Successfully Deleted!");
+                }
+            }
+        }
     }
 }
