@@ -16,5 +16,27 @@ namespace InventoryManagementSystem
         {
             InitializeComponent();
         }
+
+        //showing the subform inside the mainform
+        private Form activeForm = null;
+        private void openChildForm(Form childForm)
+        {
+            if(activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            /*childForm.ShowInTaskbar = false; */
+            childForm.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(childForm);
+            panelMain.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
+        private void buttonUsers_Click(object sender, EventArgs e)
+        {
+            openChildForm(new UserForm());
+        }
     }
 }

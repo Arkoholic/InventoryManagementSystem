@@ -33,6 +33,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvUser = new System.Windows.Forms.DataGridView();
+            this.customerButton1 = new InventoryManagementSystem.CustomerButton();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,7 +41,6 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.customerButton1 = new InventoryManagementSystem.CustomerButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerButton1)).BeginInit();
@@ -97,6 +97,17 @@
             this.dgvUser.Size = new System.Drawing.Size(768, 408);
             this.dgvUser.TabIndex = 1;
             // 
+            // customerButton1
+            // 
+            this.customerButton1.Image = ((System.Drawing.Image)(resources.GetObject("customerButton1.Image")));
+            this.customerButton1.ImageHover = ((System.Drawing.Image)(resources.GetObject("customerButton1.ImageHover")));
+            this.customerButton1.ImageNormal = ((System.Drawing.Image)(resources.GetObject("customerButton1.ImageNormal")));
+            this.customerButton1.Location = new System.Drawing.Point(706, 6);
+            this.customerButton1.Name = "customerButton1";
+            this.customerButton1.Size = new System.Drawing.Size(32, 32);
+            this.customerButton1.TabIndex = 10;
+            this.customerButton1.TabStop = false;
+            // 
             // Column5
             // 
             this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -147,17 +158,6 @@
             this.Delete.Name = "Delete";
             this.Delete.Width = 5;
             // 
-            // customerButton1
-            // 
-            this.customerButton1.Image = ((System.Drawing.Image)(resources.GetObject("customerButton1.Image")));
-            this.customerButton1.ImageHover = ((System.Drawing.Image)(resources.GetObject("customerButton1.ImageHover")));
-            this.customerButton1.ImageNormal = ((System.Drawing.Image)(resources.GetObject("customerButton1.ImageNormal")));
-            this.customerButton1.Location = new System.Drawing.Point(706, 6);
-            this.customerButton1.Name = "customerButton1";
-            this.customerButton1.Size = new System.Drawing.Size(32, 32);
-            this.customerButton1.TabIndex = 10;
-            this.customerButton1.TabStop = false;
-            // 
             // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -183,6 +183,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvUser;
+        private CustomerButton customerButton1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
@@ -190,6 +191,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewImageColumn Edit;
         private System.Windows.Forms.DataGridViewImageColumn Delete;
-        private CustomerButton customerButton1;
     }
 }

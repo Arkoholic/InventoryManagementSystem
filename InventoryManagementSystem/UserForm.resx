@@ -171,12 +171,12 @@
   </metadata>
   <data name="Edit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAOVJREFUOE/N
-        kz0KwmAQRJPSFIpYewsbwWt4AO/gT2MhCIIgaKmNN7ETsdNTiLW9jjObDQQb/RKLPHiYJTvDF41RZQCQ
-        0I6P5WBRi16p2NLYb4XDcJtmZXf/XPntMBhs0odVADvaoDebgK6v/QYDCp8tCjypTre3CTjSmq9+h8v6
-        zi5Kkgkd0JdNwIEmvvodLn+WxVSPK060cNmY5stKnSwr0ysiSpWNqMo2NlWpbEj/Xra2KbRMMDC1KDD3
-        eZGO9mrUbSkEhmYWB/p0mV4WLBMMZoUZ4Y+Zh+Ee1T9B6tctdrKKE0VvB1rCbNvn/ZoAAAAASUVORK5C
-        YII=
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAD/SURBVDhPzdS7agJBGIbh0QQhJhcTyUUI6USE1IEUkjK3IBZp9BqMWImNgkjIoYikEAIp0+YO
+        gqKVh/ef2QFZFndmJ4UfPDj/gB+zB1UBOYs+/yUv2OAVJdkIiS1rooslbpApH9jiVk8md1jhUk8esWXi
+        CSewGWBslm6Re2XLkkobWONCTymZIV5m9fEQrYdIzRTxkiTPSM2hk+1zOtnxlsmjT/py3DtScw55Qb+Q
+        VGI5lUlq+DFLVcUC8bIJnNPDo1nqXEN+s5nKCvhDXU8mOXxCyt5kwydlyL/GHPdo4zfaG8E7HcjlSYGc
+        VOYKivDOKb7RwhXyCIrcq+ASE6V2Bfd5y2TPG2QAAAAASUVORK5CYII=
 </value>
   </data>
   <metadata name="Delete.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
