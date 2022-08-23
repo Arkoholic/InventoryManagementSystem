@@ -190,6 +190,7 @@
             this.buttonProduct.Size = new System.Drawing.Size(100, 32);
             this.buttonProduct.TabIndex = 9;
             this.buttonProduct.TabStop = false;
+            this.buttonProduct.Click += new System.EventHandler(this.buttonProduct_Click);
             // 
             // pictureBox1
             // 
