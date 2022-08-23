@@ -167,6 +167,7 @@
             this.buttonCategories.Size = new System.Drawing.Size(100, 32);
             this.buttonCategories.TabIndex = 11;
             this.buttonCategories.TabStop = false;
+            this.buttonCategories.Click += new System.EventHandler(this.buttonCategories_Click);
             // 
             // label1
             // 
