@@ -22,16 +22,6 @@ namespace InventoryManagementSystem
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void UserModuleForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void pictureBoxClose_Click(object sender, EventArgs e)
         {
             this.Dispose();
@@ -77,6 +67,7 @@ namespace InventoryManagementSystem
             textUserName.Clear();
             textFullName.Clear();
             textPassword.Clear();
+            textRePassword.Clear();
             textContact.Clear();
         }
 

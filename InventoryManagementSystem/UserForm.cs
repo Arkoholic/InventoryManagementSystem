@@ -70,6 +70,7 @@ namespace InventoryManagementSystem
                 if(MessageBox.Show("Affirm whether you would like to delete this user...","Delete User?",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     con.Open();
+                    //username is the primary key
                     cm = new SqlCommand("DELETE FROM tbUser WHERE username LIKE '"+ dgvUser.Rows[e.RowIndex].Cells[1].Value.ToString() + "'",con);
                     cm.ExecuteNonQuery();
                     con.Close();
