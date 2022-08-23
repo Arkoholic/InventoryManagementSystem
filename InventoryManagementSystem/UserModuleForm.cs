@@ -68,6 +68,8 @@ namespace InventoryManagementSystem
         private void buttonClear_Click(object sender, EventArgs e)
         {
             Clear();
+            buttonSave.Enabled = true;
+            buttonUpdate.Enabled = false;
         }
 
         public void Clear()
