@@ -43,6 +43,8 @@
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.buttonClear = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
+            this.textRePassword = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
             this.SuspendLayout();
@@ -56,14 +58,14 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(536, 63);
+            this.panel1.Size = new System.Drawing.Size(580, 63);
             this.panel1.TabIndex = 0;
             // 
             // pictureBoxClose
             // 
             this.pictureBoxClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxClose.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxClose.Image")));
-            this.pictureBoxClose.Location = new System.Drawing.Point(501, 3);
+            this.pictureBoxClose.Location = new System.Drawing.Point(545, 3);
             this.pictureBoxClose.Name = "pictureBoxClose";
             this.pictureBoxClose.Size = new System.Drawing.Size(32, 33);
             this.pictureBoxClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -94,14 +96,14 @@
             // 
             // textUserName
             // 
-            this.textUserName.Location = new System.Drawing.Point(150, 91);
+            this.textUserName.Location = new System.Drawing.Point(210, 91);
             this.textUserName.Name = "textUserName";
             this.textUserName.Size = new System.Drawing.Size(339, 23);
             this.textUserName.TabIndex = 2;
             // 
             // textFullName
             // 
-            this.textFullName.Location = new System.Drawing.Point(150, 136);
+            this.textFullName.Location = new System.Drawing.Point(210, 136);
             this.textFullName.Name = "textFullName";
             this.textFullName.Size = new System.Drawing.Size(339, 23);
             this.textFullName.TabIndex = 4;
@@ -117,7 +119,7 @@
             // 
             // textPassword
             // 
-            this.textPassword.Location = new System.Drawing.Point(150, 179);
+            this.textPassword.Location = new System.Drawing.Point(210, 179);
             this.textPassword.Name = "textPassword";
             this.textPassword.Size = new System.Drawing.Size(339, 23);
             this.textPassword.TabIndex = 6;
@@ -133,7 +135,7 @@
             // 
             // textContact
             // 
-            this.textContact.Location = new System.Drawing.Point(150, 226);
+            this.textContact.Location = new System.Drawing.Point(210, 262);
             this.textContact.Name = "textContact";
             this.textContact.Size = new System.Drawing.Size(339, 23);
             this.textContact.TabIndex = 8;
@@ -141,7 +143,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(59, 229);
+            this.label5.Location = new System.Drawing.Point(59, 265);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 17);
             this.label5.TabIndex = 7;
@@ -153,12 +155,13 @@
             this.buttonUpdate.FlatAppearance.BorderSize = 0;
             this.buttonUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonUpdate.ForeColor = System.Drawing.Color.White;
-            this.buttonUpdate.Location = new System.Drawing.Point(263, 298);
+            this.buttonUpdate.Location = new System.Drawing.Point(288, 306);
             this.buttonUpdate.Name = "buttonUpdate";
             this.buttonUpdate.Size = new System.Drawing.Size(83, 35);
             this.buttonUpdate.TabIndex = 9;
             this.buttonUpdate.Text = "Update";
             this.buttonUpdate.UseVisualStyleBackColor = false;
+            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
             // buttonClear
             // 
@@ -166,7 +169,7 @@
             this.buttonClear.FlatAppearance.BorderSize = 0;
             this.buttonClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonClear.ForeColor = System.Drawing.Color.White;
-            this.buttonClear.Location = new System.Drawing.Point(352, 298);
+            this.buttonClear.Location = new System.Drawing.Point(377, 306);
             this.buttonClear.Name = "buttonClear";
             this.buttonClear.Size = new System.Drawing.Size(83, 35);
             this.buttonClear.TabIndex = 9;
@@ -180,7 +183,7 @@
             this.buttonSave.FlatAppearance.BorderSize = 0;
             this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSave.ForeColor = System.Drawing.Color.White;
-            this.buttonSave.Location = new System.Drawing.Point(441, 298);
+            this.buttonSave.Location = new System.Drawing.Point(466, 306);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(83, 35);
             this.buttonSave.TabIndex = 9;
@@ -188,11 +191,29 @@
             this.buttonSave.UseVisualStyleBackColor = false;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
+            // textRePassword
+            // 
+            this.textRePassword.Location = new System.Drawing.Point(210, 222);
+            this.textRePassword.Name = "textRePassword";
+            this.textRePassword.Size = new System.Drawing.Size(339, 23);
+            this.textRePassword.TabIndex = 11;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(59, 225);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(134, 17);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Re-enter Password :";
+            // 
             // UserModuleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(536, 345);
+            this.ClientSize = new System.Drawing.Size(580, 362);
+            this.Controls.Add(this.textRePassword);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.buttonUpdate);
@@ -236,5 +257,7 @@
         public System.Windows.Forms.TextBox textFullName;
         public System.Windows.Forms.TextBox textPassword;
         public System.Windows.Forms.TextBox textContact;
+        public System.Windows.Forms.TextBox textRePassword;
+        private System.Windows.Forms.Label label6;
     }
 }

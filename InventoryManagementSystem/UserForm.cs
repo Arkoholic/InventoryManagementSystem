@@ -45,6 +45,7 @@ namespace InventoryManagementSystem
             userModule.buttonSave.Enabled = true;
             userModule.buttonUpdate.Enabled = false;
             userModule.ShowDialog();
+            LoadUser();
         }
 
         private void dgvUser_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -60,6 +61,7 @@ namespace InventoryManagementSystem
 
                 userModule.buttonSave.Enabled = false;
                 userModule.buttonUpdate.Enabled = true;
+                userModule.textUserName.Enabled = false;
                 userModule.ShowDialog();
 
             }
@@ -74,6 +76,7 @@ namespace InventoryManagementSystem
                     MessageBox.Show("Successfully Deleted!");
                 }
             }
+            LoadUser();
         }
     }
 }
