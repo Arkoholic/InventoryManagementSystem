@@ -73,24 +73,27 @@ namespace InventoryManagementSystem
 
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
+            try
+            { 
             if (textPassword.Text != textRePassword.Text)
             {
                 MessageBox.Show("Credentials dont match!", "Caution", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            try
-            {   //creatig a messageBox to confirm clicking the update button
+            
+              //creating a messageBox to confirm clicking the update button
                 if (MessageBox.Show("Please confirm updating this user...", "Confirm Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    //SQL command to update information into database
-                    cm = new SqlCommand("UPDATE tbUser SET fullname = @fullname, password = @password, contact = @contact WHERE username LIKE '"+textUserName.Text+"'", con);
-                cm.Parameters.AddWithValue("@fullname", textFullName.Text);
-                cm.Parameters.AddWithValue("@password", textPassword.Text);
-                cm.Parameters.AddWithValue("@contact", textContact.Text);
-                con.Open();
-                cm.ExecuteNonQuery();
-                con.Close();
-                MessageBox.Show("User has been updated successfully!");
-                this.Dispose();
+                { //SQL command to update information into database
+                    cm = new SqlCommand("UPDATE tbUser SET fullname = @fullname, password = @password, contact = @contact WHERE username LIKE '" + textUserName.Text + "'", con);
+                    cm.Parameters.AddWithValue("@fullname", textFullName.Text);
+                    cm.Parameters.AddWithValue("@password", textPassword.Text);
+                    cm.Parameters.AddWithValue("@contact", textContact.Text);
+                    con.Open();
+                    cm.ExecuteNonQuery();
+                    con.Close();
+                    MessageBox.Show("User has been updated successfully!");
+                    this.Dispose();
+                }
             }
             catch (Exception ex)
             {

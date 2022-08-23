@@ -51,5 +51,35 @@ namespace InventoryManagementSystem
             moduleForm.ShowDialog();
             LoadCustomer();
         }
+
+        private void dgvCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string colName = dgvCustomer.Columns[e.ColumnIndex].Name;
+            if (colName == "Edit")
+            {
+                CustomerModuleForm customerModule = new CustomerModuleForm();
+                customerModule.labelCId.Text = dgvCustomer.Rows[e.RowIndex].Cells[1].Value.ToString();
+                customerModule.textCustomerName.Text = dgvCustomer.Rows[e.RowIndex].Cells[2].Value.ToString();
+                customerModule .textCustomerContact.Text = dgvCustomer.Rows[e.RowIndex].Cells[3].Value.ToString();
+
+                customerModule.buttonSave.Enabled = false;
+                customerModule.buttonUpdate.Enabled = true;
+                customerModule.ShowDialog();
+
+            }
+            else if (colName == "Delete")
+            {
+                if (MessageBox.Show("Affirm whether you would like to delete this customer...", "Delete Customer?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    con.Open();
+                    //username is the primary key
+                    cm = new SqlCommand("DELETE FROM tbCustomer WHERE customerId LIKE '" + dgvCustomer.Rows[e.RowIndex].Cells[1].Value.ToString() + "'", con);
+                    cm.ExecuteNonQuery();
+                    con.Close();
+                    MessageBox.Show("Successfully Deleted!");
+                }
+            }
+            LoadCustomer();
+        }
     }
 }

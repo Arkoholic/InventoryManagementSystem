@@ -119,6 +119,7 @@
             this.buttonUpdate.TabIndex = 23;
             this.buttonUpdate.Text = "Update";
             this.buttonUpdate.UseVisualStyleBackColor = false;
+            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
             // textCustomerContact
             // 
@@ -202,6 +203,6 @@
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.TextBox textCustomerName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label labelCId;
+        public System.Windows.Forms.Label labelCId;
     }
 }

@@ -61,5 +61,27 @@ namespace InventoryManagementSystem
         {
             this.Dispose();
         }
+
+        private void buttonUpdate_Click(object sender, EventArgs e)
+        {
+            try { 
+            //creating a messageBox to confirm clicking the update button
+             if (MessageBox.Show("Please confirm updating this customer...", "Confirm Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                  { //SQL command to update information into database
+                cm = new SqlCommand("UPDATE tbCustomer SET customerName = @customerName, customerContact = @customerContact WHERE  customerId LIKE '" + labelCId.Text + "'", con);
+                cm.Parameters.AddWithValue("@customerName", textCustomerName.Text);
+                cm.Parameters.AddWithValue("@customerContact", textCustomerContact.Text);
+                con.Open();
+                cm.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("Customer has been updated successfully!");
+                this.Dispose();
+            }
+               }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+}
     }
 }
