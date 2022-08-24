@@ -26,7 +26,8 @@ namespace InventoryManagementSystem
         {
             int i = 0;
             dgvProduct.Rows.Clear();
-            cm = new SqlCommand("SELECT * FROM tbProduct", con);
+            //For the searchBox
+            cm = new SqlCommand("SELECT * FROM tbProduct WHERE CONCAT(productId,productName,productPrice,productDescription,productCategory) LIKE  '%"+textSearch.Text+"%' ", con);
             con.Open();
             dr = cm.ExecuteReader();
             while (dr.Read())
@@ -80,6 +81,11 @@ namespace InventoryManagementSystem
                 }
             }
             LoadProduct(); 
+        }
+
+        private void textSearch_TextChanged(object sender, EventArgs e)
+        {
+            LoadProduct();
         }
     }
 }
