@@ -16,9 +16,12 @@ namespace InventoryManagementSystem
         SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\PKay\Documents\dbMS.mdf;Integrated Security=True;Connect Timeout=30 ");
         SqlCommand cm = new SqlCommand();
         SqlDataReader dr;
+        int quantity = 0;
+
         public TransactionModuleForm()
         {
             InitializeComponent();
+            buttonUpdate.Enabled= false;
             LoadCustomer();
             LoadProduct();
 
@@ -72,10 +75,11 @@ namespace InventoryManagementSystem
             LoadProduct();
         }
 
-        int quantity = 0;
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
-        {//In case the quantity selected is more than what is in stock:
+        {
+            GetQuantity();
+            //In case the quantity selected is more than what is in stock:
              if(Convert.ToInt16(numericUpDown1.Value) > quantity)
             {
                 MessageBox.Show("Quantity selected is more than quantity available", "Caution!",MessageBoxButtons.OK,MessageBoxIcon.Error);
@@ -101,8 +105,9 @@ namespace InventoryManagementSystem
         {
             textProductId.Text = dgvProduct.Rows[e.RowIndex].Cells[1].Value.ToString();
             textProductName.Text = dgvProduct.Rows[e.RowIndex].Cells[2].Value.ToString();
+           /* quantity = Convert.ToInt16(dgvProduct.Rows[e.RowIndex].Cells[3].Value.ToString()); */
             textPrice.Text = dgvProduct.Rows[e.RowIndex].Cells[4].Value.ToString();
-            quantity = Convert.ToInt16(dgvProduct.Rows[e.RowIndex].Cells[3].Value.ToString());
+           
         }
 
         private void buttonAddTransac_Click(object sender, EventArgs e)
@@ -143,7 +148,7 @@ namespace InventoryManagementSystem
                     cm.ExecuteNonQuery();
                     con.Close();
                     Clear();
-
+                    LoadProduct();
                 }
             }
             catch (Exception ex)
@@ -170,8 +175,21 @@ namespace InventoryManagementSystem
         private void buttonClear_Click(object sender, EventArgs e)
         {
             Clear();
-            buttonUpdate.Enabled = false;
-            buttonAddTransac.Enabled = true;
         }
+
+        public void GetQuantity()
+        {
+            cm = new SqlCommand("SELECT productQuantity FROM tbProduct WHERE productId ='" + textProductId.Text + "'", con);
+            con.Open();
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                quantity = Convert.ToInt32(dr[0].ToString());
+            }
+            dr.Close();
+            con.Close();
+        }
+
+       
     }
 }

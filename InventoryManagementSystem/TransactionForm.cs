@@ -44,9 +44,29 @@ namespace InventoryManagementSystem
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             TransactionModuleForm moduleForm = new TransactionModuleForm();
-            moduleForm.buttonUpdate.Enabled = false;
-            moduleForm.buttonAddTransac.Enabled = true;
+            /*moduleForm.buttonUpdate.Enabled = false;
+            moduleForm.buttonAddTransac.Enabled = true;*/
             moduleForm.ShowDialog();
+            LoadTransaction();
+        }
+
+        private void dgvUser_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string colName = dgvUser.Columns[e.ColumnIndex].Name;
+            
+            if (colName == "Delete")
+            {
+                if (MessageBox.Show("Affirm whether you would like to delete this transaction...", "Delete User?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    con.Open();
+                        
+                    cm = new SqlCommand("DELETE FROM tbTransaction WHERE transactionId LIKE '" + dgvUser.Rows[e.RowIndex].Cells[1].Value.ToString() + "'", con);
+                    cm.ExecuteNonQuery();
+                    con.Close();
+                    MessageBox.Show("Successfully Deleted!");
+                }
+            }
+            LoadTransaction();
         }
     }
 }
