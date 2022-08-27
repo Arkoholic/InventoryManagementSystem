@@ -83,7 +83,6 @@
             this.label1.Size = new System.Drawing.Size(103, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "User Module";
-            
             // 
             // label2
             // 
@@ -123,6 +122,7 @@
             this.textPassword.Name = "textPassword";
             this.textPassword.Size = new System.Drawing.Size(339, 23);
             this.textPassword.TabIndex = 6;
+            this.textPassword.UseSystemPasswordChar = true;
             // 
             // label4
             // 
@@ -197,6 +197,7 @@
             this.textRePassword.Name = "textRePassword";
             this.textRePassword.Size = new System.Drawing.Size(339, 23);
             this.textRePassword.TabIndex = 11;
+            this.textRePassword.UseSystemPasswordChar = true;
             // 
             // label6
             // 

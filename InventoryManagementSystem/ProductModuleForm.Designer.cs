@@ -217,6 +217,7 @@
             this.labelPId.Size = new System.Drawing.Size(70, 17);
             this.labelPId.TabIndex = 27;
             this.labelPId.Text = "product Id";
+            this.labelPId.Visible = false;
             // 
             // ProductModuleForm
             // 
@@ -240,7 +241,7 @@
             this.Controls.Add(this.label2);
             this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ProductModuleForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ProductModuleForm";
