@@ -128,9 +128,9 @@ namespace InventoryManagementSystem
                 {   
                     if (MessageBox.Show("Please confirm adding this transaction...", "Confirm Saving", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                        
-                        cm = new SqlCommand("INSERT INTO tbTransaction(transactionDate,productName,customerId,quantity,price,total)VALUES(@transactionDate,@productName,@customerId,@quantity,@price,@total)", con);
+                        cm = new SqlCommand("INSERT INTO tbTransaction(transactionDate,productId,customerId,quantity,price,total)VALUES(@transactionDate,@productId,@customerId,@quantity,@price,@total)", con);
                     cm.Parameters.AddWithValue("@transactionDate", dateTimeTransaction.Value);
-                    cm.Parameters.AddWithValue("@productName", textProductId.Text);
+                    cm.Parameters.AddWithValue("@productId", Convert.ToInt16(textProductId.Text));
                     cm.Parameters.AddWithValue("@customerId", Convert.ToInt16(textCustomerId.Text));
                     cm.Parameters.AddWithValue("@quantity", Convert.ToInt16(numericUpDown1.Value));
                     cm.Parameters.AddWithValue("@price", Convert.ToInt16(textPrice.Text));

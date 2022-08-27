@@ -25,14 +25,14 @@ namespace InventoryManagementSystem
         public void LoadTransaction()
         { 
                 int i = 0;
-                dgvUser.Rows.Clear();
-                cm = new SqlCommand("SELECT * FROM tbTransaction", con);
+                dgvTransaction.Rows.Clear();
+                cm = new SqlCommand("SELECT transactionId,transactionDate, T.productId, P.productName, T.customerId, C.customerName, quantity, price,total   FROM tbTransaction AS T  JOIN tbCustomer AS C ON T.customerId = C.customerId JOIN tbProduct AS P ON T.productId = P.productId WHERE CONCAT (transactionId,transactionDate, T.productId, P.productName, T.customerId, C.customerName, quantity, price) LIKE '%" +textSearch.Text+"%'", con);
                 con.Open();
                 dr = cm.ExecuteReader();
                 while (dr.Read())
                 {
                     i++;
-                    dgvUser.Rows.Add(i, dr[0].ToString(), Convert.ToDateTime(dr[1].ToString()).ToString("dd/MM/yyyy"), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), dr[6].ToString());
+                    dgvTransaction.Rows.Add(i, dr[0].ToString(), Convert.ToDateTime(dr[1].ToString()).ToString("dd/MM/yyyy"), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), dr[6].ToString(), dr[7].ToString(), dr[8].ToString());
                 }
                 dr.Close();
                 con.Close();
@@ -52,7 +52,7 @@ namespace InventoryManagementSystem
 
         private void dgvUser_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            string colName = dgvUser.Columns[e.ColumnIndex].Name;
+            string colName = dgvTransaction.Columns[e.ColumnIndex].Name;
             
             if (colName == "Delete")
             {
@@ -60,19 +60,24 @@ namespace InventoryManagementSystem
                 {
                     con.Open();
                         
-                    cm = new SqlCommand("DELETE FROM tbTransaction WHERE transactionId LIKE '" + dgvUser.Rows[e.RowIndex].Cells[1].Value.ToString() + "'", con);
+                    cm = new SqlCommand("DELETE FROM tbTransaction WHERE transactionId LIKE '" + dgvTransaction.Rows[e.RowIndex].Cells[1].Value.ToString() + "'", con);
                     cm.ExecuteNonQuery();
                     con.Close();
                     MessageBox.Show("Successfully Deleted!");
 
-                    cm = new SqlCommand("UPDATE tbProduct SET productQuantity = (productQuantity+@productQuantity)  WHERE productId LIKE '" + dgvUser.Rows[e.RowIndex].Cells[3].Value.ToString() + "'", con);
-                    cm.Parameters.AddWithValue("@productQuantity", Convert.ToInt16(dgvUser.Rows[e.RowIndex].Cells[5].Value.ToString()));
+                    cm = new SqlCommand("UPDATE tbProduct SET productQuantity = (productQuantity+@productQuantity)  WHERE productId LIKE '" + dgvTransaction.Rows[e.RowIndex].Cells[3].Value.ToString() + "'", con);
+                    cm.Parameters.AddWithValue("@productQuantity", Convert.ToInt16(dgvTransaction.Rows[e.RowIndex].Cells[5].Value.ToString()));
 
                     con.Open();
                     cm.ExecuteNonQuery();
                     con.Close();
                 }
             }
+            LoadTransaction();
+        }
+
+        private void textSearch_TextChanged(object sender, EventArgs e)
+        {
             LoadTransaction();
         }
     }
