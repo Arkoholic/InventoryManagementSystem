@@ -62,7 +62,7 @@ namespace InventoryManagementSystem
                 if(dr.HasRows)
                 {
                     MessageBox.Show("Hello " + dr["fullname"].ToString() +"!","Welcome",MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
-                    MainForm main = new MainForm();
+                    MainForms main = new MainForms();
                     this.Hide();
 
                     main.ShowDialog();
