@@ -69,6 +69,7 @@
             this.dgvCategories.Location = new System.Drawing.Point(0, 0);
             this.dgvCategories.Margin = new System.Windows.Forms.Padding(4);
             this.dgvCategories.Name = "dgvCategories";
+            this.dgvCategories.RowHeadersVisible = false;
             this.dgvCategories.Size = new System.Drawing.Size(768, 408);
             this.dgvCategories.TabIndex = 5;
             this.dgvCategories.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategories_CellContentClick);

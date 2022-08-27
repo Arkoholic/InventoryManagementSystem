@@ -64,6 +64,13 @@ namespace InventoryManagementSystem
                     cm.ExecuteNonQuery();
                     con.Close();
                     MessageBox.Show("Successfully Deleted!");
+
+                    cm = new SqlCommand("UPDATE tbProduct SET productQuantity = (productQuantity+@productQuantity)  WHERE productId LIKE '" + dgvUser.Rows[e.RowIndex].Cells[3].Value.ToString() + "'", con);
+                    cm.Parameters.AddWithValue("@productQuantity", Convert.ToInt16(dgvUser.Rows[e.RowIndex].Cells[5].Value.ToString()));
+
+                    con.Open();
+                    cm.ExecuteNonQuery();
+                    con.Close();
                 }
             }
             LoadTransaction();
