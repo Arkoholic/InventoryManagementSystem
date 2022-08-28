@@ -101,9 +101,10 @@
             this.buttonTransactions.Image = ((System.Drawing.Image)(resources.GetObject("buttonTransactions.Image")));
             this.buttonTransactions.ImageHover = ((System.Drawing.Image)(resources.GetObject("buttonTransactions.ImageHover")));
             this.buttonTransactions.ImageNormal = ((System.Drawing.Image)(resources.GetObject("buttonTransactions.ImageNormal")));
-            this.buttonTransactions.Location = new System.Drawing.Point(85, 369);
+            this.buttonTransactions.Location = new System.Drawing.Point(61, 369);
             this.buttonTransactions.Name = "buttonTransactions";
-            this.buttonTransactions.Size = new System.Drawing.Size(100, 32);
+            this.buttonTransactions.Size = new System.Drawing.Size(51, 32);
+            this.buttonTransactions.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.buttonTransactions.TabIndex = 17;
             this.buttonTransactions.TabStop = false;
             this.buttonTransactions.Click += new System.EventHandler(this.buttonTransactions_Click);
@@ -124,9 +125,10 @@
             this.buttonUsers.Image = ((System.Drawing.Image)(resources.GetObject("buttonUsers.Image")));
             this.buttonUsers.ImageHover = ((System.Drawing.Image)(resources.GetObject("buttonUsers.ImageHover")));
             this.buttonUsers.ImageNormal = ((System.Drawing.Image)(resources.GetObject("buttonUsers.ImageNormal")));
-            this.buttonUsers.Location = new System.Drawing.Point(85, 300);
+            this.buttonUsers.Location = new System.Drawing.Point(61, 300);
             this.buttonUsers.Name = "buttonUsers";
-            this.buttonUsers.Size = new System.Drawing.Size(100, 32);
+            this.buttonUsers.Size = new System.Drawing.Size(51, 32);
+            this.buttonUsers.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.buttonUsers.TabIndex = 15;
             this.buttonUsers.TabStop = false;
             this.buttonUsers.Click += new System.EventHandler(this.buttonUsers_Click);
@@ -147,9 +149,10 @@
             this.buttonCustomers.Image = ((System.Drawing.Image)(resources.GetObject("buttonCustomers.Image")));
             this.buttonCustomers.ImageHover = ((System.Drawing.Image)(resources.GetObject("buttonCustomers.ImageHover")));
             this.buttonCustomers.ImageNormal = ((System.Drawing.Image)(resources.GetObject("buttonCustomers.ImageNormal")));
-            this.buttonCustomers.Location = new System.Drawing.Point(85, 231);
+            this.buttonCustomers.Location = new System.Drawing.Point(61, 231);
             this.buttonCustomers.Name = "buttonCustomers";
-            this.buttonCustomers.Size = new System.Drawing.Size(100, 32);
+            this.buttonCustomers.Size = new System.Drawing.Size(51, 32);
+            this.buttonCustomers.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.buttonCustomers.TabIndex = 13;
             this.buttonCustomers.TabStop = false;
             this.buttonCustomers.Click += new System.EventHandler(this.buttonCustomers_Click);
@@ -170,9 +173,10 @@
             this.buttonCategories.Image = ((System.Drawing.Image)(resources.GetObject("buttonCategories.Image")));
             this.buttonCategories.ImageHover = ((System.Drawing.Image)(resources.GetObject("buttonCategories.ImageHover")));
             this.buttonCategories.ImageNormal = ((System.Drawing.Image)(resources.GetObject("buttonCategories.ImageNormal")));
-            this.buttonCategories.Location = new System.Drawing.Point(85, 169);
+            this.buttonCategories.Location = new System.Drawing.Point(61, 169);
             this.buttonCategories.Name = "buttonCategories";
-            this.buttonCategories.Size = new System.Drawing.Size(100, 32);
+            this.buttonCategories.Size = new System.Drawing.Size(51, 32);
+            this.buttonCategories.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.buttonCategories.TabIndex = 11;
             this.buttonCategories.TabStop = false;
             this.buttonCategories.Click += new System.EventHandler(this.buttonCategories_Click);
@@ -190,12 +194,14 @@
             // 
             // buttonProduct
             // 
+            this.buttonProduct.BackColor = System.Drawing.Color.Firebrick;
             this.buttonProduct.Image = ((System.Drawing.Image)(resources.GetObject("buttonProduct.Image")));
             this.buttonProduct.ImageHover = ((System.Drawing.Image)(resources.GetObject("buttonProduct.ImageHover")));
             this.buttonProduct.ImageNormal = ((System.Drawing.Image)(resources.GetObject("buttonProduct.ImageNormal")));
-            this.buttonProduct.Location = new System.Drawing.Point(85, 106);
+            this.buttonProduct.Location = new System.Drawing.Point(61, 106);
             this.buttonProduct.Name = "buttonProduct";
-            this.buttonProduct.Size = new System.Drawing.Size(100, 32);
+            this.buttonProduct.Size = new System.Drawing.Size(51, 32);
+            this.buttonProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.buttonProduct.TabIndex = 9;
             this.buttonProduct.TabStop = false;
             this.buttonProduct.Click += new System.EventHandler(this.buttonProduct_Click);
@@ -303,6 +309,7 @@
             this.Name = "MainForms";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Shoprite Management System";
+            this.Load += new System.EventHandler(this.MainForms_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buttonTransactions)).EndInit();

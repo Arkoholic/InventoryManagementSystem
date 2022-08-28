@@ -21,9 +21,33 @@ namespace InventoryManagementSystem
             InitializeComponent();
         }
 
-        private void Login_Load(object sender, EventArgs e)
-        {
 
+        public class User
+        {
+            public bool IsAdmin { get; set; }
+            public bool IsUser { get; set; }
+
+            private static User _currentUser;
+            private static object _locker = new object(); // Rem
+            public static User CurrentUser
+            {
+                get
+                {
+                    // Returns _currentUser, if it has been create before
+                    if (_currentUser != null) return _currentUser;
+                    // lock all threads and let them go inside lock one by one
+                    lock (_locker)
+                    {
+                        // Double-checked locking: This will prevent multi-time creation of _currentUser. 
+                        // e.g. two threads came together for the first time and wait in the lock(_locker).
+                        if (_currentUser == null)
+                        {
+                            _currentUser = new User();
+                        }
+                        return _currentUser;
+                    }
+                }
+            }
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -62,8 +86,12 @@ namespace InventoryManagementSystem
                 if(dr.HasRows)
                 {
                     MessageBox.Show("Hello " + dr["fullname"].ToString() +"!","Welcome",MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
-                    MainForms main = new MainForms();
+
+                    User.CurrentUser.IsUser = textName.Text != "admin";
+                    User.CurrentUser.IsAdmin = textName.Text == "admin";
                     this.Hide();
+                    MainForms main = new MainForms();
+                   
 
                     main.ShowDialog();
                 }
