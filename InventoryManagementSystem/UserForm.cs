@@ -58,7 +58,6 @@ namespace InventoryManagementSystem
                 userModule.textFullName.Text = dgvUser.Rows[e.RowIndex].Cells[2].Value.ToString();
                 userModule.textPassword.Text = dgvUser.Rows[e.RowIndex].Cells[3].Value.ToString();
                 userModule.textContact.Text = dgvUser.Rows[e.RowIndex].Cells[4].Value.ToString();
-
                 userModule.buttonSave.Enabled = false;
                 userModule.buttonUpdate.Enabled = true;
                 userModule.textUserName.Enabled = false;
@@ -79,5 +78,9 @@ namespace InventoryManagementSystem
             }
             LoadUser();
         }
+
+        
+
+       
     }
 }
