@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -78,9 +79,24 @@ namespace InventoryManagementSystem
             }
             LoadUser();
         }
+        /*
+        public static string passwordHash(String password)
+        {
+            SHA256CryptoServiceProvider cryptoServiceProvider = new SHA256CryptoServiceProvider();
+            Byte[]passswordByte = Encoding.UTF32.GetBytes(password);
+            var encrypt = SHA256.Create();
+            byte[] encryptByte = encrypt.ComputeHash(passswordByte);
+            return Convert.ToBase64String(encryptByte);
+        }
 
-        
-
-       
+       private void checkpassword_CheckedChanged(object sender, EventArgs e)
+        {
+            if(!checkpassword_CheckedChanged().Ch)
+            {
+                textPassword.UseSystemPasswordChar = true;
+            }
+        else 
+        { textPassword.UseSystemPasswordChar = false;}
+        } */
     }
 }
