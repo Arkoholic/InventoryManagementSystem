@@ -23,8 +23,12 @@ namespace InventoryManagementSystem
         }
 
         public void LoadTransaction()
-        { 
+        {
+            double total = 0;
+            double totalChange = 1000;
+            
                 int i = 0;
+            
                 dgvTransaction.Rows.Clear();
                 cm = new SqlCommand("SELECT transactionId,transactionDate, T.productId, P.productName, T.customerId, C.customerName, quantity, price,total   FROM tbTransaction AS T  JOIN tbCustomer AS C ON T.customerId = C.customerId JOIN tbProduct AS P ON T.productId = P.productId WHERE CONCAT (transactionId,transactionDate, T.productId, P.productName, T.customerId, C.customerName, quantity, price) LIKE '%" +textSearch.Text+"%'", con);
                 con.Open();
@@ -33,10 +37,15 @@ namespace InventoryManagementSystem
                 {
                     i++;
                     dgvTransaction.Rows.Add(i, dr[0].ToString(), Convert.ToDateTime(dr[1].ToString()).ToString("dd/MM/yyyy"), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), dr[6].ToString(), dr[7].ToString(), dr[8].ToString());
-                }
+                total += Convert.ToInt32(dr[8].ToString());
+                
+            }
                 dr.Close();
                 con.Close();
-            
+            double changeTill = total - totalChange;
+                labelTotal.Text =  total.ToString();
+                labelChange.Text = changeTill.ToString();
+                
           
 
         }  
