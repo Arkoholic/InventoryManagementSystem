@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppWelcomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppWelcomeForm.Designer.cs">
+      <DependentUpon>AppWelcomeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CategoriesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,9 @@
     <Compile Include="UserModuleForm.Designer.cs">
       <DependentUpon>UserModuleForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AppWelcomeForm.resx">
+      <DependentUpon>AppWelcomeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CategoriesForm.resx">
       <DependentUpon>CategoriesForm.cs</DependentUpon>
     </EmbeddedResource>
