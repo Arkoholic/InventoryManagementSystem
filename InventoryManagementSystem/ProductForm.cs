@@ -34,6 +34,10 @@ namespace InventoryManagementSystem
             {
                 i++;
                 dgvProduct.Rows.Add(i, dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString());
+                if (dr[2].ToString() == "1")
+                {
+                    MessageBox.Show("You have to restock " + dr[1].ToString() +" with description: " + dr[4].ToString() +"!","Item quantity low!",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                }
             }
             dr.Close();
             con.Close();
